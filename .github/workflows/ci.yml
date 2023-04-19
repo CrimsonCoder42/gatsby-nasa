@@ -1,23 +1,27 @@
+# Set the name of the GitHub Actions workflow
 name: CI
 
+# Define the events that trigger the workflow
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ] # Trigger the workflow on push to the main branch
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main" ] # Trigger the workflow on pull requests to the main branch
 
+# Define the jobs in the workflow
 jobs:
-  build:
+  build: # Name of the job
 
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 18.x
+    runs-on: ubuntu-latest # Define the operating system for the job
+
+    steps: # Define the steps for the job
+    - uses: actions/checkout@v3 # Check out the repository
+    - name: Use Node.js 18.x # Set up Node.js 18.x
       uses: actions/setup-node@v3
       with:
         node-version: "18.x"
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run lint
-    - run: npm test
-    - run: npm run build
+        cache: "npm" # Cache the npm dependencies
+    - run: npm ci # Install the npm dependencies
+    - run: npm run lint # Run the linter
+    - run: npm test # Run the tests
+    - run: npm run build # Build the project
