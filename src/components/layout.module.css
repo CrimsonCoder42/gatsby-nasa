@@ -1,0 +1,46 @@
+@import url('../styles/variables.css');
+
+body {
+    background-color: var(--bg-color);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+    margin: 0;
+    padding: 0 0 4rem 0;
+    color: var(--text-color);
+}
+.container {
+    margin: 0;
+}
+.container header {
+    padding: 1rem;
+    margin: 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.container main,
+.container header h1,
+.container header nav {
+    width: 70%;
+    margin: auto;
+}
+.container header nav {
+    margin-top: .5rem;
+}
+.container a,
+.container a:link,
+.container a:hover,
+.container a:visited,
+.container a:active {
+    margin-right: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.container a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+.container h1 {
+    color: var(--heading-color);
+}
+p {
+    line-height: 1.75rem;
+}
